@@ -1,0 +1,184 @@
+section{
+position: relative;
+width: 1512px;
+height: 810px;
+background: linear-gradient(105.19deg, #FFFFFF 32%, #ebacd1 100%);
+z-index: -1;
+} 
+
+
+section .pict{
+    display: inline;
+    position: relative;
+    bottom: 0px;
+    left: 257px;
+}
+
+.with-linear-gradient {
+    border-style: solid;
+    border-width: 10px;
+    border-image: linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66)) 1;
+  }
+#img-profile{
+    width: 270px;
+    height: 371px;
+     
+    /* border: 27px solid linear-gradient(to bottom, #D9D9D9, rgba(217, 217, 217, 0))1 100%; */
+    border: solid 27px transparent;
+    border-radius: 135px;
+    background-image:linear-gradient(to bottom, #D9D9D9, rgba(217, 217, 217, 0)100%);
+    background-origin: border-box;
+
+
+}
+
+
+div.card{
+position: relative;
+width: 575px;
+height: 432px;
+left: 801px;
+bottom: 267px;
+display: inline;
+}
+
+section div.text{
+position: relative;
+width: 575px;
+height: 432px;
+left: 517px;
+bottom: 0px;
+display: inline-block;
+}
+
+
+div.text #header-name{
+position: relative;
+height: 256px;
+font-style: italic;
+font-size: 64px;
+line-height: 77px;
+
+color: #9B75B9;
+}
+
+#header-name p{
+    margin-bottom: 0px;
+    font-family: 'Inter';
+}
+
+div.text #desc {   
+position: relative;
+height: 174px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 200;
+font-size: 24px;
+line-height: 29px;
+
+color: #9B75B9;
+}
+
+#desc p{
+    margin: unset;
+}
+
+.footer{
+    display: block;
+}
+
+.footer .helloworld{
+    position:relative;
+    width: 643px;
+    height: 148.86px;
+    bottom: 70px;
+    /* background-color: black; */
+    margin-top: 200px;
+    display: inline-flex;
+
+}
+
+.footer .sosmed{
+    position: relative;
+    width: 557px;
+    height: 182.36px;
+    display: -webkit-inline-box;
+    /* size: unset; */
+    left: 113px;
+    top : 77px;
+}
+
+.sosmed img{
+    position: absolute;
+    width: 100.21px;
+height: 100.21px;
+    z-index: -1;
+}
+#sosmed1{
+   left: 100px;
+}
+#sosmed2{
+    left: 200px;
+}
+#sosmed3{
+    left: 300px;
+}
+ #sosmed4{
+    left: 400px;
+}
+#sosmed5{
+    left: 500px;
+}
+
+
+.footer .helloworld p{
+    position: relative;
+    /* width: auto; */
+    /* height: 111.86000000000001px; */
+    left: 96px;
+    top: 34px;
+    margin-top: 0px;
+    font-family: 'Inter';
+    /* font-style: normal; */
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 77px;
+}
+
+.texthello{
+    display: inline;
+    position: relative;
+    left: 37px;
+}
+
+#kurawal1{
+    color :#D63031;
+    display: inline;
+}
+#kurawal2{
+    color: #F604FB;
+    display: inline;
+}
+#hello{
+    color: #FFFFFF;
+    display: inline;
+}
+#world{
+    color: #1120A0;
+    display: inline;
+
+}
+#kurung{
+    color: #FFE70D;
+    display: inline;
+}
+
+.helloworld #kotak{
+position: absolute;
+width: 354px;
+height: 144px;
+left: 0px;
+background: #D9D9D9;
+display: inline;
+z-index: -1;
+}

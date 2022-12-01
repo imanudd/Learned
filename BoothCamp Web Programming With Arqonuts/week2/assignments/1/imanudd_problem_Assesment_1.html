@@ -1,0 +1,248 @@
+<html>
+    <header>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+    </header>
+    <body>
+        <div id="problem">
+
+            <div id="desc">
+                <h1 class="section-title">Week2/Assignment_1</h1>
+
+                <h2 class="section-title">Problem Description</h2>
+                <div class="section-content">
+
+                    <div id="transaction-list">
+                        <h3>Array References</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Shop</th>
+                                    <th>Product</th>
+                                    <th>Total transaction</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               <tr>
+                                <td>Nike</td>
+                                <td>Nike Free v.2.0</td>
+                                <td>Rp. 500000</td>
+                               </tr>
+    
+                               <tr>
+                                <td>Nike</td>
+                                <td>Nike Flyknit</td>
+                                <td>Rp. 250000</td>
+                               </tr>
+    
+                               <tr>
+                                <td>Adidas</td>
+                                <td>Adidas Adizero</td>
+                                <td>Rp. 1200000</td>
+                               </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>
+                        Given an array named <b>transactionList</b>.
+                    </p>
+                    <p>
+                        <b>IF</b> users input matched with shop name <b>THEN</b> print :
+                    </p>
+                    <p>
+                        Found : user_input
+                    </p>
+                    <p>
+                        object
+                    </p>
+                    <p>
+                        ==================
+                    </p>
+                    
+                </div>
+
+
+                <h2 class="section-title">Expected Results</h2>
+                <div class="section-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Input</th>
+                                <th>Output</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1.</td>
+                                <td>Nike</td>
+                                <td>
+<pre>
+Found : Nike
+{shop: 'Nike', product: 'Nike Free v.2.0', totalTransaction: 500000}
+==================
+Found Nike
+{shop: 'Nike', product: 'Nike Flyknit', totalTransaction: 250000}
+================== 
+</pre>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>2.</td>
+                                <td>Adidas</td>
+                                <td>
+<pre>
+Found : Adidas
+{shop: 'Adidas', product: 'Adidas Adizero', totalTransaction: 1200000}
+==================
+</pre>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>3.</td>
+                                <td>nike</td>
+                                <td>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>4.</td>
+                                <td>adidas</td>
+                                <td>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>5.</td>
+                                <td>Test</td>
+                                <td>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <p>Sample Result</p>
+
+                    <video width="400" controls autoplay>
+                        <source src="./assignment-1-sample.mov" type="video/mp4">
+                    </video>
+                    
+                </div>
+
+            </div>
+    
+            <div id="view">
+
+                
+
+                <form id="search-form">
+                    <input type="text" placeholder="Find transaction by shop name" name="search"
+                    style="width: 400px;">
+                    <button type="submit">Search</button>
+                </form>
+
+            </div>
+            
+        </div>
+        
+        
+        <style>
+            body {
+                margin: 0;
+                font-family: 'IBM Plex Sans', sans-serif;
+            }
+
+            #problem {
+                display: flex;
+                height: 100%;
+            }
+
+            #desc {
+                width: 30%;
+                box-shadow: 0 0 0.3rem rgb(0 0 0 / 10%);
+                overflow: scroll;
+            }
+
+            #view {
+                flex: 1;
+            }
+
+            #search-form {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .section-title {
+                margin: 0;
+                padding: 1em;
+                background-color: #191919;
+                color: white;
+                font-size: 90%;
+            }
+
+            .section-content {
+                padding: 1.3em;
+            }
+
+            table tr th {
+                background-color: #191919;
+                color: white;
+                padding-right: 50px;
+            }
+
+            #transaction-list {
+                width: 500px;
+                margin: 0 auto;
+            }
+           
+        </style>
+
+        <script type="text/javascript">
+
+            const form = document.getElementById('search-form');
+            form.addEventListener('submit', (e)=> onsubmit(e));
+        
+            function onsubmit(e){
+                e.preventDefault();
+                let data = new FormData(form);
+                solution(data.get('search'))
+            }
+        
+            /*
+            * ####################################
+            * ASSIGNMENT
+            * ####################################
+            */
+            let transactionList = [
+                { shop : 'Nike', product : 'Nike Free v.2.0', totalTransaction : 500000 },
+                { shop : 'Nike', product : 'Nike Flyknit', totalTransaction : 250000  },
+                { shop : 'Adidas', product : 'Adidas Adizero', totalTransaction : 1200000  }
+            ];
+            function solution(user_input){
+                 for(i=0;i<transactionList.length;i++){
+                    if(user_input == 'Nike'){
+                        if(transactionList[i].shop==user_input){
+                            console.log("Found : "+user_input);
+                            console.log(transactionList[i]);
+                        }
+                    }   
+                    else if(user_input == 'Adidas'){
+                        if(transactionList[i].shop==user_input){
+                            console.log("Found : "+user_input);
+                            console.log(transactionList[i]);
+                        }
+                    }
+                 }    
+            }
+        
+        </script>
+
+    </body>
+</html>

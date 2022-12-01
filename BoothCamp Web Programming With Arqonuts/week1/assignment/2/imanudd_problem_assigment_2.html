@@ -1,0 +1,158 @@
+<html>
+    <header>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+    </header>
+    <body>
+        <div id="problem">
+
+            <div id="desc">
+                <h1 class="section-title">Week1/Assignment_2</h1>
+
+                <h2 class="section-title">Problem Description</h2>
+                <div class="section-content">
+                    <p>
+                        Print any user search input after user click "Search"-button.
+                    </p>
+                    <p>
+                        Formula :
+                    </p>
+                    <p>
+                        Console_output = "Hasil pencarian : " + user_input
+                    </p>
+                    <p>
+                        But <b>IF</b> user searching using "iphone" keyword <b>THEN</b> print "Hasil pencarian : sold out"
+                    </p>
+                </div>
+
+
+                <h2 class="section-title">Expected Results</h2>
+                <div class="section-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Input</th>
+                                <th>Output</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1.</td>
+                                <td>Macbook pro</td>
+                                <td>Hasil pencarian : Macbook pro</td>
+                            </tr>
+                            <tr>
+                                <td>2.</td>
+                                <td>Shirt</td>
+                                <td>Hasil pencarian : Shirt</td>
+                            </tr>
+                            <tr>
+                                <td>3.</td>
+                                <td>iphone</td>
+                                <td>Hasil pencarian : sold out</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>Sample Result</p>
+
+                    <video width="400" controls autoplay>
+                        <source src="./assignment-2-sample.mov" type="video/mp4">
+                    </video>
+                    
+                </div>
+
+            </div>
+    
+            <div id="view">
+
+                <form id="search-form">
+                    <input type="text" placeholder="Cari di ecommerce" name="search"
+                    style="width: 400px;">
+                    <button type="submit">Search</button>
+                </form>
+
+            </div>
+            
+        </div>
+        
+        
+        <style>
+            body {
+                margin: 0;
+                font-family: 'IBM Plex Sans', sans-serif;
+            }
+
+            #problem {
+                display: flex;
+                height: 100%;
+            }
+
+            #desc {
+                width: 30%;
+                box-shadow: 0 0 0.3rem rgb(0 0 0 / 10%)
+            }
+
+            #view {
+                flex: 1;
+            }
+
+            #search-form {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .section-title {
+                margin: 0;
+                padding: 1em;
+                background-color: #191919;
+                color: white;
+                font-size: 90%;
+            }
+
+            .section-content {
+                padding: 1.3em;
+            }
+
+            table tr th {
+                background-color: #191919;
+                color: white;
+                padding-right: 50px;
+            }
+           
+        </style>
+
+        <script type="text/javascript">
+
+            const form = document.getElementById('search-form');
+            form.addEventListener('submit', (e)=> onsubmit(e));
+        
+            function onsubmit(e){
+                e.preventDefault();
+                let data = new FormData(form);
+                solution(data.get('search'))
+            }
+        
+            /*
+            * ####################################
+            * ASSIGNMENT
+            * ####################################
+            */
+            function solution(user_input){
+                let input =user_input.toUpperCase();
+                if (input == "IPHONE"){
+                    console.log("Hasil Pencarian : Sold Out" );
+                }
+                else{
+                    console.log("Hasil Pencarian : "+user_input );
+                }
+            }
+        
+        </script>
+
+    </body>
+</html>
