@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <tittle> Document </tittle>
+    </head>
+    <script>
+    var items = 0;
+    function addItem(){
+        items++;
+        
+        var html = "<tr>";
+            html += "<td>" + items + "</td>";
+            html += "<td></td>";
+            html += "<td></td>";
+        html += "</tr>";
+        
+        var row = document.getElementById("tbody").insertRow();
+        row.innerHTML = html;
+    }
+        
+    </script>
+    
+    
+    <body>
+        <table>
+            <tr>
+                <td><input value="Add Row" type="button" onclick="addItem();"></td>
+            </tr>
+            <tr>
+                <th>No</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+            <tbody id="tbody"></tbody>
+        </table>
+    </body>
+</html>

@@ -1,24 +1,19 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-)
-
 func main() {
-	var kapasitas int
-	fmt.Scanln(&kapasitas)
+	// var kapasitas int
+	// fmt.Scanln(&kapasitas)
 
-	var array []string
-	inputelement := bufio.NewScanner(os.Stdin)
+	// var array []string
+	// inputelement := bufio.NewScanner(os.Stdin)
 
-	for i := 0; i < kapasitas; i++ {
-		inputelement.Scan()
-		element := inputelement.Text()
-		fmt.Println(element)
-		array[i] = element
-	}
+	// for i := 0; i < kapasitas; i++ {
+	// 	inputelement.Scan()
+	// 	element := inputelement.Text()
+	// 	fmt.Println(element)
+	// 	array[i] = element
+	// }
+
 }
 
 // for i := 0; i < kapasitas; i++ {
@@ -60,13 +55,13 @@ func main() {
 // dry_food[3] = "Pro Plan"
 // fmt.Println(dry_food[3])
 
-//Array Multiverse
+// Array Multiverse
 // var num = [4][3]string{
 // 	[3]string{"1", "2", "3"},
 // 	[3]string{"4", "5", "6"},
 // 	[3]string{"7", "8", "9"},
 // 	[3]string{"10", "11", "12"},
-//
+
 // fmt.Println(num)
 // //output dengan loop
 // for i := 0; i < len(num); i++ {
