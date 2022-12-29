@@ -13,6 +13,7 @@ import (
 func CheckLogin(c echo.Context) error {
 	username := c.FormValue("username")
 	password := c.FormValue("password")
+	var id int
 
 	res, err := models.CheckLogin(username, password)
 	if err != nil {
@@ -28,7 +29,7 @@ func CheckLogin(c echo.Context) error {
 	token := jwt.New(jwt.SigningMethodHS256)
 
 	claims := token.Claims.(jwt.MapClaims)
-	claims["username"] = username
+	claims["id"] = id
 	claims["level"] = "application"
 	claims["exp"] = time.Now().Add(time.Hour * 72).Unix()
 
