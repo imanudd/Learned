@@ -9,7 +9,7 @@ import (
 
 func Init() {
 	e := echo.New()
-	registerProductAPI(e, "gorm")
+	registerProductAPI(e, "bun")
 	e.Logger.Fatal(e.Start(":1323"))
 }
 

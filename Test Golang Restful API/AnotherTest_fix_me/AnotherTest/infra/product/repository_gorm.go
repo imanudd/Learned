@@ -3,7 +3,6 @@ package product
 import (
 	"context"
 	"log"
-	"net/http"
 	"os"
 	"time"
 
@@ -48,8 +47,6 @@ func (repo *ProductGormRepositoryImpl) GetAllProduct(ctx context.Context) (res R
 	if result.Error != nil {
 		panic("Gagal Show All Product")
 	}
-	res.Status = http.StatusOK
-	res.Message = "Berhasil Query Select Product"
 	res.Data = product
 	return res, nil
 }
@@ -61,8 +58,7 @@ func (repo *ProductGormRepositoryImpl) DeleteProduct(ctx context.Context, id int
 	if result.Error != nil {
 		panic("Error Delete Data")
 	}
-	res.Status = http.StatusAccepted
-	res.Message = "Succsesfully Delete Data"
+
 	res.Data = map[string]int{
 		"Id Product = ": id,
 	}
@@ -76,8 +72,6 @@ func (repo *ProductGormRepositoryImpl) AddNewProduct(ctx context.Context, req Pr
 	if result.Error != nil {
 		panic("Error Insert Data")
 	}
-	res.Status = http.StatusCreated
-	res.Message = "Succsessfully Create Data"
 	res.Data = req
 	return res, nil
 }
@@ -89,8 +83,6 @@ func (repo *ProductGormRepositoryImpl) UpateProduct(ctx context.Context, req Pro
 	if result.Error != nil {
 		return res, err
 	}
-	res.Status = http.StatusOK
-	res.Message = "Successfully Update Data"
 	res.Data = product
 	return res, nil
 }

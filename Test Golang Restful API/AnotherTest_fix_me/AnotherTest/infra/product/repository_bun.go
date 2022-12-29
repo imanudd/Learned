@@ -3,7 +3,6 @@ package product
 import (
 	"context"
 	"fmt"
-	"net/http"
 
 	"github.com/jackc/pgx/v4"
 	"github.com/jackc/pgx/v4/stdlib"
@@ -45,8 +44,6 @@ func (repo *ProductBunRepositoryImpl) GetAllProduct(ctx context.Context) (res Re
 	if err != nil {
 		return res, err
 	}
-	res.Status = http.StatusOK
-	res.Message = "Successfully Get All Data"
 	res.Data = products
 	return res, nil
 }
@@ -62,8 +59,6 @@ func (repo *ProductBunRepositoryImpl) DeleteProduct(ctx context.Context, id int)
 		return res, err
 	}
 
-	res.Status = http.StatusOK
-	res.Message = "SUKSES DELETE Product"
 	res.Data = map[string]int64{
 		"rowaffected": rowAffected,
 	}
@@ -79,8 +74,6 @@ func (repo *ProductBunRepositoryImpl) AddNewProduct(ctx context.Context, req Pro
 	if err != nil {
 		return res, err
 	}
-	res.Status = http.StatusCreated
-	res.Message = "sukses"
 	res.Data = map[string]interface{}{
 		"new insert": result,
 	}
@@ -95,8 +88,6 @@ func (repo *ProductBunRepositoryImpl) UpateProduct(ctx context.Context, req Prod
 	if err != nil {
 		return res, err
 	}
-	res.Status = http.StatusCreated
-	res.Message = "sukses"
 	res.Data = result
 	return res, nil
 }

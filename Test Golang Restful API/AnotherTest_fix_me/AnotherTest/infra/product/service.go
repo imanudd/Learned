@@ -2,6 +2,7 @@ package product
 
 import (
 	"context"
+	"net/http"
 )
 
 type ProductServiceImpl struct {
@@ -20,6 +21,8 @@ func (svc *ProductServiceImpl) GetAllProduct(c context.Context) (res Response, e
 	if err != nil {
 		return res, err
 	}
+	res.Status = http.StatusOK
+	res.Message = "Successfully Get All Data"
 	return res, nil
 
 }
@@ -29,6 +32,9 @@ func (svc *ProductServiceImpl) DeleteProduct(c context.Context, id int) (res Res
 	if err != nil {
 		return res, err
 	}
+
+	res.Status = http.StatusAccepted
+	res.Message = "Succsesfully Delete Data"
 	return res, nil
 }
 func (svc *ProductServiceImpl) AddNewProduct(c context.Context, request Product) (res Response, err error) {
@@ -37,6 +43,8 @@ func (svc *ProductServiceImpl) AddNewProduct(c context.Context, request Product)
 	if err != nil {
 		return res, err
 	}
+	res.Status = http.StatusCreated
+	res.Message = "Succsessfully Add Data"
 	return res, nil
 }
 func (svc *ProductServiceImpl) UpdateProduct(c context.Context, request Product) (res Response, err error) {
@@ -45,5 +53,7 @@ func (svc *ProductServiceImpl) UpdateProduct(c context.Context, request Product)
 	if err != nil {
 		return res, err
 	}
+	res.Status = http.StatusOK
+	res.Message = "Successfully Update Data"
 	return res, nil
 }
