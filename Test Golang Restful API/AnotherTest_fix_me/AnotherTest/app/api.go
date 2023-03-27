@@ -2,7 +2,6 @@ package app
 
 import (
 	"AnotherTest/infra/product"
-	"fmt"
 
 	"github.com/labstack/echo/v4"
 )
@@ -17,7 +16,6 @@ func Init() {
 // IF orm == gorm then init gorm repo
 func registerProductAPI(e *echo.Echo, orm string) {
 	var productRepository product.ProductRepository
-	fmt.Println("masuk proses")
 	switch orm {
 	case "bun":
 		productRepository = product.NewProductBunRepositoryImpl("postgres://postgres:12345678@localhost:5432/testbun?sslmode=disable")

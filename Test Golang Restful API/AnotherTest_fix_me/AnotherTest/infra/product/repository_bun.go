@@ -70,12 +70,13 @@ func (repo *ProductBunRepositoryImpl) AddNewProduct(ctx context.Context, req Pro
 	// TODO
 	product := &Product{Id: req.Id, Category: req.Category, ProductName: req.ProductName, Weight: req.Weight, Price: req.Price}
 
-	result, err := repo.db.NewInsert().Model(product).Exec(ctx)
+	result, err := repo.db.NewInsert().Model(product).Returning("id").Exec(ctx)
 	if err != nil {
 		return res, err
 	}
-	res.Data = map[string]interface{}{
-		"new insert": result,
+	lastInsertId, _ := result.LastInsertId()
+	res.Data = map[string]int64{
+		"new insert": lastInsertId,
 	}
 
 	return res, nil
